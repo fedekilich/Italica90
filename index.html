@@ -158,6 +158,18 @@
     white-space: nowrap;
   }
 
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    body { overflow: auto; }
+    .wrap { padding: 1.5rem; }
+    .logo { font-size: clamp(2rem, 10vw, 3.5rem); margin-bottom: 0.75rem; }
+    .bajada { margin-bottom: 2.5rem; }
+    .divisor { margin-bottom: 2.5rem; }
+    .btns { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+    .btn-camino { min-width: unset; }
+    .gate-input { width: 180px; }
+  }
+
   /* Fade in */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }

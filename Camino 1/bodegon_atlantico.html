@@ -230,6 +230,46 @@
   .mg-m-terrazo  { grid-column: 11/12; grid-row: 4/5; }
   .mg-m-textil   { grid-column: 12/13; grid-row: 4/5; }
 
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    /* Nav */
+    nav { padding: 0.8rem 1.2rem; }
+    .nav-logo { font-size: 0.82rem; }
+    .nav-tab { padding: 0.3rem 0.75rem; font-size: 0.65rem; }
+
+    /* Hero */
+    .hero-content { padding: 0 1.2rem; }
+    .claims { padding: 1rem 0; }
+
+    /* Moodboard — colapsa a 2 columnas fluidas */
+    .mg {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: none;
+      grid-auto-rows: 180px;
+    }
+    .mg-cell {
+      grid-column: auto !important;
+      grid-row: auto !important;
+    }
+    /* Celdas clave span full width */
+    .mg-sole, .mg-numeros { grid-column: span 2 !important; }
+    /* Ocultar materiales en mobile */
+    .mg-cell.mat { display: none; }
+
+    /* Moodboard intro */
+    .moodboard-intro { padding: 0 1.2rem 2rem; }
+
+    /* Paleta */
+    .palette-section { padding: 3rem 1.2rem; }
+    .palette-grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+
+    /* Filosofia */
+    .filosofia { padding: 4rem 1.5rem; }
+
+    /* Footer */
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+  }
+
   /* --- Paleta --- */
   .palette-section { padding: 6rem 3rem; background: var(--bianco); }
   .section-label { font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--arancio); margin-bottom: 0.75rem; }
