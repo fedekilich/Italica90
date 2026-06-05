@@ -531,7 +531,7 @@
 
 <section class="descarga" id="descarga">
   <p class="descarga-label reveal">Material de referencia</p>
-  <a href="Mood%20board%20camino%202%20-%20Bodegon%20Calido.png" download class="descarga-btn reveal">↓ Descargar moodboard</a>
+  <a href="#" onclick="forceDownload('Mood board camino 2 - Bodegon Calido.png'); return false;" class="descarga-btn reveal">↓ Descargar moodboard</a>
 </section>
 
 <section class="filosofia" id="filosofia">
@@ -571,6 +571,18 @@
   document.getElementById('lightbox-close').onclick = () => lb.classList.remove('open');
   lb.addEventListener('click', e => { if(e.target === lb) lb.classList.remove('open'); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape') lb.classList.remove('open'); });
+
+  function forceDownload(filename) {
+    fetch(filename)
+      .then(r => r.blob())
+      .then(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+  }
 
   const toast = document.getElementById('toast');
   function copyHex(hex) {
